@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clientes</title>
+    <style>
+        .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedora" style="float:none; margin: 0 auto;width: 95%;">
+        <div class="clearfix">
+            <div style="float:left; width: 50%;">
+                <h1>Clientes</h1>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nombre</th>
+                    <th>Primer apellido</th>
+                    <th>Segundo apellido</th>
+                    <th>Ciudad</th>
+                    <th>Categoría</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente : ${clientes}">
+                    <td th:text="${cliente.id}"></td>
+                    <td th:text="${cliente.nombre}"></td>
+                    <td th:text="${cliente.apellido1}"></td>
+                    <td th:text="${cliente.apellido2}"></td>
+                    <td th:text="${cliente.ciudad}"></td>
+                    <td th:text="${cliente.categoria}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
